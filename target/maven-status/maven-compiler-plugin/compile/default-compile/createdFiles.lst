@@ -1,0 +1,8 @@
+com\crowdynamics\devices\controllers\DevicesController.class
+com\crowdynamics\devices\dto\DeviceDto.class
+com\crowdynamics\devices\model\Device.class
+com\crowdynamics\devices\repository\DeviceDAO.class
+com\crowdynamics\devices\services\DeviceServiceImpl.class
+com\crowdynamics\devices\exceptions\DeviceServiceException.class
+com\crowdynamics\devices\DevicesApplication.class
+com\crowdynamics\devices\services\DeviceService.class
