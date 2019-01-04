@@ -1,5 +1,6 @@
 package com.crowdynamics.devices.model;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,19 +14,58 @@ import lombok.Data;
 @Entity
 @Table(name = "devices")
 public class Device {
-	
+
+	private Long id;
+	private String deviceId;
+	private Long userId;
+	private String modelName;
+	private String description;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", updatable = false, nullable = false)
-	private Long id;
+	public Long getId() {
+		return id;
+	}
 
-	@Column(unique = true, nullable = false)
-	private String deviceId;
+	public void setId(Long id) {
+		this.id = id;
+	}
+	@Basic
+	@Column(name="device_id",unique = true, nullable = false)
+	public String getDeviceId() {
+		return deviceId;
+	}
 
-	private Long userId;
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+	}
+	
+	@Column(name="user_id",nullable = false)
+	public Long getUserId() {
+		return userId;
+	}
 
-	@Column(nullable = false)
-	private String modelName;
-	private String description;
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+	
+	@Column(name="model_name",nullable = false)
+	public String getModelName() {
+		return modelName;
+	}
+
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+	}
+	
+	@Column(name="description",nullable = true)
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 }

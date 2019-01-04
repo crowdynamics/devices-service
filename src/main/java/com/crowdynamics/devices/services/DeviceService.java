@@ -5,7 +5,7 @@ import java.util.List;
 import com.crowdynamics.devices.model.Device;
 
 public interface DeviceService {
-	Device save(Device sigfoxMessage) ;
+	Device save(Device device) ;
 
 	Device findById(Long id);
 
